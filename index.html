@@ -1,22 +1,389 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="light">
   <head>
     <meta charset="UTF-8" />
+    <title>TriplexSolutio · Animeland</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TriplexSolutio</title>
+
+    <!-- GOOGLE ANALYTICS -->
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-PCMHEQ64E0"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-PCMHEQ64E0");
+    </script>
+
+    <!-- Anuncios -->
     <script
       async
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7902819778621033"
       crossorigin="anonymous"
     ></script>
+
+    <!-- Iconos (Font Awesome) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="icon"
+      type="image/webp"
+      href="img/logo.webp"
+      class="logo-circle"
+    />
   </head>
   <body>
-    <h1>TriplexSolutio</h1>
-    <p>Bienvenido a la página principal del proyecto.</p>
+    <!-- Patreon banner web component (opcional, puedes quitarlo si no lo usas aquí) -->
+    <script type="module" src="elements/patreonBanner.js"></script>
 
-    <p>
-      Accede al buscador de animes aquí:
-      <a href="/buscador-anime/">Ir al buscador</a>
-    </p>
+    <!-- HEADER (reutilizado del buscador) -->
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="logo-area">
+          <img
+            class="logo-circle"
+            src="img/logo.webp"
+            alt="Triplexsolutio logo"
+          />
+          <div class="brand-wrap">
+            <span class="brand">TriplexSolutio</span>
+            <span class="brand-sub">@triplexsolutio</span>
+          </div>
+        </div>
+        <div class="header-actions">
+          <!-- Botón directo al buscador -->
+          <a href="/buscador-anime/" class="header-cta" id="headerSearchBtn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span>Buscador anime</span>
+          </a>
+
+          <button
+            id="themeToggle"
+            class="icon-button theme-toggle"
+            aria-label="Cambiar tema"
+          >
+            <i class="fa-solid fa-moon"></i>
+          </button>
+
+          <button
+            id="menuToggle"
+            class="icon-button menu-toggle"
+            aria-label="Abrir menú"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- MENÚ MÓVIL -->
+    <nav id="mobileMenu" class="mobile-menu">
+      <div class="mobile-menu-backdrop"></div>
+      <div class="mobile-menu-panel">
+        <button
+          class="mobile-menu-close"
+          id="mobileMenuClose"
+          aria-label="Cerrar menú"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <ul>
+          <li><a href="#top" data-menu-link>Inicio</a></li>
+          <li><a href="#top" data-menu-link>Newsletter anime</a></li>
+          <li><a href="#links" data-menu-link>Links rápidos</a></li>
+          <li><a href="#workwithme" data-menu-link>Colabora conmigo</a></li>
+          <li><a href="/buscador-anime/" data-menu-link>Buscador anime</a></li>
+          <li><a href="#footer" data-menu-link>Contacto</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main id="top">
+      <!-- PERFIL / HERO LINK IN BIO -->
+      <section class="profile-hero">
+        <div class="profile-avatar">
+          <img src="img/logo.webp" alt="Avatar TriplexSolutio" />
+        </div>
+        <h1 class="profile-name">TriplexSolutio</h1>
+        <p class="profile-tagline">
+          Anime · Donghua · Buscador · Entretenimiento
+        </p>
+      </section>
+
+      <!-- BARRA NEWSLETTER -->
+      <!-- <section id="newsletter" class="newsletter-bar-section">
+        <form id="newsletterBarForm" class="newsletter-bar">
+          <input
+            type="email"
+            id="newsletterBarEmail"
+            class="newsletter-bar__input"
+            placeholder="Newsletter anime exclusiva"
+            autocomplete="email"
+            required
+          />
+          <button type="submit" class="newsletter-bar__button">
+            Me apunto
+          </button>
+        </form>
+        <p class="newsletter-bar__hint">
+          Contenido anime exclusivo, descubrimientos y alertas de animes TOP.
+        </p>
+      </section> -->
+
+      <!-- CONTADOR SEGUIDORES -->
+      <section class="social-stats" aria-label="Seguidores en redes sociales">
+        <div class="social-stat-card social-stat-card--ig">
+          <div class="social-stat-card__icon">
+            <i class="fa-brands fa-instagram"></i>
+          </div>
+          <div class="social-stat-card__label">Instagram</div>
+          <div class="social-stat-card__value" id="statInstagram">37.5k</div>
+        </div>
+
+        <div class="social-stat-card social-stat-card--threads">
+          <div class="social-stat-card__icon">
+            <i class="fa-brands fa-threads"></i>
+          </div>
+          <div class="social-stat-card__label">Threads</div>
+          <div class="social-stat-card__value" id="statThreads">6.4k</div>
+        </div>
+
+        <div class="social-stat-card social-stat-card--tt">
+          <div class="social-stat-card__icon">
+            <i class="fa-brands fa-tiktok"></i>
+          </div>
+          <div class="social-stat-card__label">TikTok</div>
+          <div class="social-stat-card__value" id="statTiktok">24.6k</div>
+        </div>
+      </section>
+
+      <!-- LINKS PRINCIPALES / ACCIONES -->
+      <section id="links" class="link-blocks">
+        <!-- LISTADEF (accordion) -->
+        <article class="accordion">
+          <button class="accordion__header" data-accordion-toggle>
+            <span>Listas de anime</span>
+            <i class="fa-solid fa-chevron-down accordion__icon"></i>
+          </button>
+          <div class="accordion__body">
+            <p>
+              Acceso a mis listas definitivas de animes y donghuas por
+              temáticas, años, recomendaciones personales, etc.
+            </p>
+            <a
+              href="https://patreon.com/triplexsolutio"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-primary block-btn"
+            >
+              Ver en Patreon
+            </a>
+          </div>
+        </article>
+
+        <!-- Invitar a un café -->
+        <!-- <article class="card-support">
+          <p class="card-support__text">
+            Apoya el contenido de TriplexSolutio antes de que me dé pereza
+            hacerlo todo gratis :)
+          </p>
+          <a
+            href="https://www.buymeacoffee.com/triplexsolutio"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-accent block-btn"
+            id="coffeeBtn"
+          >
+            Invitarle a un café ☕
+          </a>
+        </article> -->
+
+        <!-- Botón hacia el buscador -->
+        <article class="card-link-big">
+          <div class="card-link-big__text">
+            <h2>Buscador de animes</h2>
+            <p>
+              Encuentra dónde ver mis recomendaciones de anime y donghua
+              (plataformas, años, géneros, temporadas, etc).
+            </p>
+          </div>
+          <a
+            href="/buscador-anime/"
+            class="btn btn-outline block-btn"
+            id="goSearchBtn"
+          >
+            Ir al buscador
+          </a>
+        </article>
+      </section>
+
+      <!-- WORK WITH ME -->
+      <section id="workwithme" class="workwithme-section">
+        <div class="workwithme-card">
+          <img
+            class="workwithme-media"
+            src="img/work_with_me.png"
+            alt="Triplexsolutio logo"
+          />
+
+          <div class="workwithme-content">
+            <h2>Colabora conmigo</h2>
+            <p class="workwithme-pill-row">
+              <span class="pill">ANIME</span>
+              <span class="pill">DONGHUA</span>
+              <span class="pill">ENTERTAINMENT</span>
+            </p>
+            <p class="workwithme-text">
+              Estadísticas, contacto, contenido para marcas, datos por redes
+              sociales, etc.
+            </p>
+            <a
+              href="https://beacons.ai/triplexsolutio/mediakit?origin=lib"
+              target="_blank"
+              rel="noopener"
+              class="workwithme-link"
+            >
+              View My Media Kit →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- AGENDA COLABORACIÓN (accordion) -->
+      <section class="link-blocks">
+        <article class="accordion">
+          <button class="accordion__header" data-accordion-toggle>
+            <span>Agendar colaboración</span>
+            <i class="fa-solid fa-chevron-down accordion__icon"></i>
+          </button>
+          <div class="accordion__body">
+            <p>
+              Rellena un breve formulario para contarme tu proyecto, timings y
+              tipo de colaboración que estás buscando.
+            </p>
+            <a
+              href="https://triplexsolutio.com/contacto-colab"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-primary block-btn"
+            >
+              Enviar propuesta
+            </a>
+          </div>
+        </article>
+      </section>
+
+      <!-- ZONA DE ANUNCIOS -->
+      <section class="ads-section">
+        <!-- <h2>Publicidad / Avisos</h2> -->
+        <patreon-banner></patreon-banner>
+      </section>
+    </main>
+
+    <!-- MODAL NEWSLETTER -->
+    <div id="newsletterModal" class="modal modal--newsletter hidden">
+      <div class="modal-backdrop"></div>
+      <div class="modal-content modal-content--newsletter">
+        <button class="modal-close" id="newsletterModalClose">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="modal-body modal-body--newsletter">
+          <p class="modal-kicker">¿Quieres contenido anime exclusivo?</p>
+          <h2 class="modal-title">Newsletter anime</h2>
+          <p class="modal-text">
+            Apúntate para no perderte nada y estar al día con el anime más TOP.
+          </p>
+
+          <form id="newsletterModalForm" class="newsletter-modal-form">
+            <input
+              type="email"
+              id="newsletterModalEmail"
+              class="newsletter-modal-input"
+              placeholder="Email address"
+              autocomplete="email"
+              required
+            />
+            <button type="submit" class="btn btn-accent block-btn">
+              Me apunto
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER (reutilizado) -->
+    <footer id="footer" class="site-footer">
+      <div class="footer-inner">
+        <p>
+          © <span id="year"></span> TriplexSolutio ·
+          <span style="font-size: 12px"
+            >De un fan del anime para fans del anime :)</span
+          >
+        </p>
+        <div class="social-links">
+          <a
+            href="https://instagram.com/triplexsolutio"
+            target="_blank"
+            rel="noopener"
+            class="footer-social__link"
+            data-social="instagram"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+
+          <a
+            href="https://tiktok.com/@triplexsolutio"
+            target="_blank"
+            rel="noopener"
+            class="footer-social__link"
+            data-social="tiktok"
+            ><i class="fa-brands fa-tiktok"></i
+          ></a>
+          <a
+            href="https://patreon.com/triplexsolutio"
+            target="_blank"
+            rel="noopener"
+            class="footer-social__link"
+            data-social="patreon"
+            ><i class="fa-brands fa-patreon"></i
+          ></a>
+          <a href="https://discord.gg/GqC7QmZdc5" target="_blank" rel="noopener"
+            ><i class="fa-brands fa-discord"></i
+          ></a>
+          <a
+            href="https://youtube.com/@triplexsolutio"
+            target="_blank"
+            rel="noopener"
+            class="footer-social__link"
+            data-social="youtube"
+            ><i class="fa-brands fa-youtube"></i
+          ></a>
+          <a
+            href="https://www.threads.net/@triplexsolutio"
+            target="_blank"
+            rel="noopener"
+            class="footer-social__link"
+            data-social="threads"
+            ><i class="fa-brands fa-threads"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/app-home.js"></script>
   </body>
 </html>
