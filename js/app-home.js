@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const hasSeenNewsletter = localStorage.getItem("ts-newsletter-modal-seen");
   if (!hasSeenNewsletter) {
     setTimeout(() => {
-      openNewsletterModal();
+      // openNewsletterModal();
     }, 1800);
   }
 
@@ -166,8 +166,7 @@ newsletterModal?.addEventListener("click", (e) => {
 // ====== NEWSLETTER FORMS (solo GA + feedback, sin backend real) ======
 
 function handleNewsletterSubmit(formId) {
-  const form =
-    formId === "bar" ? newsletterBarForm : newsletterModalForm;
+  const form = formId === "bar" ? newsletterBarForm : newsletterModalForm;
   if (!form) return;
 
   form.addEventListener("submit", (e) => {

@@ -1107,41 +1107,35 @@ html[data-theme="dark"] .social-stat-card--threads .social-stat-card__icon {
 }
 
 /* ===== MODAL NEWSLETTER ESPECÍFICO HOME ===== */
+/* ===== MODAL NEWSLETTER – LAYOUT ESPECÍFICO ===== */
 
 .modal--newsletter .modal-content--newsletter {
-  max-width: 540px;
+  max-width: 640px;
 }
 
+/* Sobrescribimos el .modal-body genérico solo en newsletter */
 .modal-body--newsletter {
-  padding: 1.4rem 1.4rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.4rem 1.6rem 1.6rem;
 }
 
-.modal-kicker {
-  margin: 0 0 0.2rem;
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
+/* Columna izquierda de copy */
+.modal-newsletter-copy {
+  max-width: 320px;
 }
 
-.modal-title {
-  margin: 0 0 0.4rem;
-  font-size: 1.6rem;
-}
-
-.modal-text {
-  margin: 0 0 0.9rem;
-  font-size: 0.9rem;
-  color: var(--muted);
-}
-
+/* Formulario derecha */
 .newsletter-modal-form {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.6rem;
+  width: 100%;
 }
 
 .newsletter-modal-input {
+  width: 100%;
   border-radius: 999px;
   border: 1px solid var(--border);
   padding: 0.55rem 0.9rem;
@@ -1157,12 +1151,28 @@ html[data-theme="dark"] .social-stat-card--threads .social-stat-card__icon {
 
 .newsletter-modal-input:focus {
   border-color: var(--accent2);
-  box-shadow: 0 0 0 1px rgba(31,122,255,.3);
+  box-shadow: 0 0 0 1px rgba(31, 122, 255, 0.3);
 }
 
-/* Ajustes modal para móviles */
-@media (max-width: 480px) {
-  .modal-content--newsletter {
-    width: 92%;
+/* Aseguramos que el botón ocupe todo el ancho */
+.modal--newsletter .btn.block-btn {
+  width: 100%;
+}
+
+/* Layout en escritorio: texto izquierda, form derecha */
+@media (min-width: 720px) {
+  .modal-body--newsletter {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.8rem;
+  }
+
+  .modal-newsletter-copy {
+    flex: 1.1;
+  }
+
+  .newsletter-modal-form {
+    flex: 1;
   }
 }
+
