@@ -217,3 +217,21 @@ coffeeBtn?.addEventListener("click", () => {
     gtag("event", "click_support_coffee", {});
   }
 });
+
+function initSocialCardNavigation() {
+  const cards = document.querySelectorAll(".social-stat-card");
+
+  cards.forEach((card) => {
+    const url = card.getAttribute("data-url");
+    if (!url) return;
+
+    // card.style.cursor = "pointer";
+
+    card.addEventListener("click", () => {
+      window.open(url, "_blank", "noopener");
+    });
+  });
+}
+
+// Ejecutar cuando cargue la página
+document.addEventListener("DOMContentLoaded", initSocialCardNavigation);
