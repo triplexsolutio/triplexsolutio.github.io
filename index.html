@@ -46,8 +46,9 @@
     />
   </head>
   <body>
-    <!-- Patreon banner web component (opcional, puedes quitarlo si no lo usas aquí) -->
+    <!-- banner web component -->
     <script type="module" src="elements/patreonBanner.js"></script>
+    <script type="module" src="elements/newsletterBar.js"></script>
 
     <!-- HEADER (reutilizado del buscador) -->
     <header class="site-header">
@@ -115,34 +116,14 @@
     <main id="top">
       <!-- PERFIL / HERO LINK IN BIO -->
       <section class="profile-hero">
-        <div class="profile-avatar">
+        <!-- <div class="profile-avatar">
           <img src="img/logo_.webp" alt="Avatar TriplexSolutio" />
         </div>
         <h1 class="profile-name">TriplexSolutio</h1>
         <p class="profile-tagline">
           Anime · Donghua · Buscador · Entretenimiento
-        </p>
+        </p> -->
       </section>
-
-      <!-- BARRA NEWSLETTER -->
-      <!-- <section id="newsletter" class="newsletter-bar-section">
-        <form id="newsletterBarForm" class="newsletter-bar">
-          <input
-            type="email"
-            id="newsletterBarEmail"
-            class="newsletter-bar__input"
-            placeholder="Newsletter anime exclusiva"
-            autocomplete="email"
-            required
-          />
-          <button type="submit" class="newsletter-bar__button">
-            Me apunto
-          </button>
-        </form>
-        <p class="newsletter-bar__hint">
-          Contenido anime exclusivo, descubrimientos y alertas de animes TOP.
-        </p>
-      </section> -->
 
       <!-- CONTADOR SEGUIDORES -->
       <section class="social-stats" aria-label="Seguidores en redes sociales">
@@ -169,6 +150,11 @@
           <div class="social-stat-card__label">TikTok</div>
           <div class="social-stat-card__value" id="statTiktok">24.6k</div>
         </div>
+      </section>
+
+      <!-- BARRA NEWSLETTER -->
+      <section id="newsletter" class="newsletter-bar-section">
+        <newsletter-bar></newsletter-bar>
       </section>
 
       <!-- LINKS PRINCIPALES / ACCIONES -->
