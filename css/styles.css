@@ -11,7 +11,7 @@
 
   --accent: #ff7a1a;       /* naranja */
   --accent-soft: rgba(255, 122, 26, 0.1);
-    --accent-soft2: rgba(253, 105, 0, 0.6);
+  --accent-soft2: rgba(253, 105, 0, 0.6);
   --accent2: #1f7aff;      /* azul */
   --accent2-soft: rgba(31, 122, 255, 0.08);
 
@@ -828,58 +828,7 @@ html[data-theme="light"] .modal-close {
   color: var(--muted);
 }
 
-/* ===== NEWSLETTER BAR ===== */
 
-.newsletter-bar-section {
-  max-width: 680px;
-  margin: 0.6rem auto 1.2rem;
-  padding: 0 1.2rem;
-}
-
-.newsletter-bar {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 0.4rem;
-  background: var(--bg-soft);
-  border-radius: 999px;
-  border: 1px solid var(--accent2-soft);
-  box-shadow: var(--shadow-soft);
-  padding: 0.2rem 0.3rem 0.2rem 0.85rem;
-}
-
-.newsletter-bar__input {
-  border: none;
-  background: transparent;
-  outline: none;
-  font-size: 0.9rem;
-  color: var(--text);
-}
-
-.newsletter-bar__input::placeholder {
-  color: var(--muted);
-}
-
-.newsletter-bar__button {
-  border: none;
-  border-radius: 999px;
-  background: var(--accent);
-  color: #fff;
-  padding: 0.45rem 0.9rem;
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
-  min-width: 100px;
-}
-
-.newsletter-bar__button:hover {
-  filter: brightness(1.05);
-}
-
-.newsletter-bar__hint {
-  margin: 0.35rem 0 0;
-  font-size: 0.8rem;
-  color: var(--muted);
-}
 
 /* ===== SOCIAL STATS ===== */
 
