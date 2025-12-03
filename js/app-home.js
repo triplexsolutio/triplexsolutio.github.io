@@ -14,6 +14,7 @@ const newsletterModalForm = document.getElementById("newsletterModalForm");
 const headerSearchBtn = document.getElementById("headerSearchBtn");
 const goSearchBtn = document.getElementById("goSearchBtn");
 const coffeeBtn = document.getElementById("coffeeBtn");
+const logoZone = document.getElementById("logo-id");
 
 // ====== INIT ======
 
@@ -218,6 +219,7 @@ coffeeBtn?.addEventListener("click", () => {
   }
 });
 
+// ============= CARD NAVIGTION ==========
 function initSocialCardNavigation() {
   const cards = document.querySelectorAll(".social-stat-card");
 
@@ -235,3 +237,11 @@ function initSocialCardNavigation() {
 
 // Ejecutar cuando cargue la página
 document.addEventListener("DOMContentLoaded", initSocialCardNavigation);
+
+// ==============  OTROS EVENTOS ================
+
+logoZone.addEventListener("click", () => {
+  // Siempre te lleva al home del dominio (raíz)
+  const url = `${window.location.origin}/`;
+  window.location.href = url; // misma pestaña
+});
