@@ -1149,7 +1149,7 @@ html[data-theme="dark"] .social-stat-card--threads .social-stat-card__icon {
   display: inline-flex;           /* icono + texto en fila */
   align-items: center;
   gap: 8px;
-  min-width: 80vw !important;
+  min-width: 85vw !important;
   }
 .toast.is-visible {
   opacity: 1;
