@@ -17,7 +17,7 @@
         autocomplete="email"
         data-required="true"
         required
-        placeholder="Añade tu email.."
+        placeholder="Tu email aquí.."
       />
 
       <button type="submit" class="newsletter-pill__button">Me apunto</button>
@@ -38,7 +38,7 @@
   </form>
   <!-- Texto de ayuda dentro de la misma píldora -->
   <p class="newsletter-pill__hint">
-    💌 Recibe contenido anime exclusivo y mucho más.
+    💌 Newsletter · Recibe contenido anime exclusivo para tí
   </p>
   <style>
     :host {
@@ -136,6 +136,59 @@
         /* width: 100%; */
         text-align: center;
       }
+    }
+
+    /* ===== NEWSLETTER BAR ===== */
+
+    .newsletter-bar-section {
+      max-width: 680px;
+      margin: 0.6rem auto 1.2rem;
+      padding: 0 1.2rem;
+    }
+
+    .newsletter-bar {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.4rem;
+      background: var(--bg-soft);
+      border-radius: 999px;
+      border: 1px solid var(--accent2-soft);
+      box-shadow: var(--shadow-soft);
+      padding: 0.2rem 0.3rem 0.2rem 0.85rem;
+    }
+
+    .newsletter-bar__input {
+      border: none;
+      background: transparent;
+      outline: none;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    .newsletter-bar__input::placeholder {
+      color: var(--muted);
+    }
+
+    .newsletter-bar__button {
+      border: none;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      padding: 0.45rem 0.9rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      min-width: 100px;
+    }
+
+    .newsletter-bar__button:hover {
+      filter: brightness(1.05);
+    }
+
+    .newsletter-bar__hint {
+      margin: 0.35rem 0 0;
+      font-size: 0.8rem;
+      color: var(--muted);
     }
   </style>
 </section>
