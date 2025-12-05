@@ -348,7 +348,7 @@ body {
 /* ====== ADS SECTION ====== */
 
 .ads-section {
-  max-width: 1100px;
+  max-width: 680px;
   margin: 0 auto 1.5rem;
   padding: 0 1rem;
 }
@@ -975,7 +975,7 @@ html[data-theme="dark"] .social-stat-card--threads .social-stat-card__icon {
 /* ===== WORK WITH ME ===== */
 
 .workwithme-section {
-  max-width: 820px;
+  max-width: 680px;
   margin: 0 auto 1.4rem;
   padding: 0 1.2rem;
 }
