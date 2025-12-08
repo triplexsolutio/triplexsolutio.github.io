@@ -860,11 +860,8 @@ html[data-theme="light"] .modal-close {
   color: #ffb042; /* tono típico Patreon */
 }
 .social-stat-card--patreon {
-  grid-column: -2 / -4; /* ocupa toda la fila */
-}@media (min-width: 768px) {
-  .social-stat-card--patreon {
-    grid-column: -2 / -4;
-  }
+  grid-column: 1 / -1; /* ocupa toda la fila */
+
 }
 
 .social-stat-card--discord .social-stat-card__icon {
