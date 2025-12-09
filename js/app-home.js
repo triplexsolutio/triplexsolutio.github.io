@@ -1,4 +1,6 @@
 // app-home.js – lógica para la página link-in-bio
+import { planetTree } from "../data/planetTree.js";
+import { PlanetSystem } from "../elements/planets/planetSystem/planetSystem.js";
 
 // ====== ELEMENTOS ======
 const themeToggleBtn = document.getElementById("themeToggle");
@@ -53,6 +55,12 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  const planetRoot = document.getElementById("planet-system-root");
+  new PlanetSystem({
+    host: planetRoot,
+    data: planetTree,
+  });
 });
 
 // ====== TEMA LIGHT/DARK ======
@@ -72,6 +80,17 @@ themeToggleBtn?.addEventListener("click", () => {
   localStorage.setItem("ts-theme", next);
   updateThemeToggleIcon();
 });
+
+// El botón de tema del header reutiliza la lógica del toggle flotante
+const headerThemeBtn = document.getElementById("themeToggle");
+if (headerThemeBtn) {
+  headerThemeBtn.addEventListener("click", () => {
+    const toggleBtn = document.querySelector("[data-theme-toggle]");
+    if (toggleBtn) {
+      toggleBtn.click();
+    }
+  });
+}
 
 // ====== MENÚ MÓVIL ======
 

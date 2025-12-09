@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="light">
+<html lang="es" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <title>TriplexSolutio · Animeland</title>
@@ -41,6 +41,8 @@
     <link rel="stylesheet" href="css/header.css" />
     <link rel="stylesheet" href="css/home.css" />
     <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/planets.css" />
+
     <link
       rel="icon"
       type="image/webp"
@@ -52,6 +54,7 @@
     <!-- banner web component -->
     <script type="module" src="elements/patreonBanner.js"></script>
     <script type="module" src="elements/newsletterBar.js"></script>
+    <script type="module" src="js/app-home.js" defer></script>
 
     <!-- HEADER (reutilizado del buscador) -->
     <header class="site-header">
@@ -118,15 +121,7 @@
 
     <main id="top">
       <!-- PERFIL / HERO LINK IN BIO -->
-      <section class="profile-hero">
-        <!-- <div class="profile-avatar">
-          <img src="img/logo_.webp" alt="Avatar TriplexSolutio" />
-        </div>
-        <h1 class="profile-name">TriplexSolutio</h1>
-        <p class="profile-tagline">
-          Anime · Donghua · Buscador · Entretenimiento
-        </p> -->
-      </section>
+      <section class="profile-hero"></section>
 
       <!-- CONTADOR SEGUIDORES -->
       <section class="social-stats" aria-label="Seguidores en redes sociales">
@@ -163,7 +158,7 @@
           <div class="social-stat-card__value" id="statTiktok">24.6k</div>
         </div>
 
-        <div
+        <!-- <div
           class="social-stat-card social-stat-card--patreon"
           data-url="https://www.patreon.com/triplexsolutio"
         >
@@ -174,7 +169,7 @@
           <div class="social-stat-card__value" id="statPatreon">
             220 Miembros
           </div>
-        </div>
+        </div> -->
 
         <!-- <div
           class="social-stat-card social-stat-card--discord"
@@ -192,6 +187,9 @@
       <section id="newsletter" class="newsletter-bar-section">
         <newsletter-bar></newsletter-bar>
       </section>
+
+      <!-- Contenedor del sistema de planetas -->
+      <section><div id="planet-system-root"></div></section>
 
       <!-- LINKS PRINCIPALES / ACCIONES -->
       <section id="links" class="link-blocks">
@@ -216,23 +214,6 @@
             </a>
           </div>
         </article>
-
-        <!-- Invitar a un café -->
-        <!-- <article class="card-support">
-          <p class="card-support__text">
-            Apoya el contenido de TriplexSolutio antes de que me dé pereza
-            hacerlo todo gratis :)
-          </p>
-          <a
-            href="https://www.buymeacoffee.com/triplexsolutio"
-            target="_blank"
-            rel="noopener"
-            class="btn btn-accent block-btn"
-            id="coffeeBtn"
-          >
-            Invitarle a un café ☕
-          </a>
-        </article> -->
 
         <!-- Botón hacia el buscador -->
         <article class="card-link-big">
@@ -410,7 +391,5 @@
         </div>
       </div>
     </footer>
-
-    <script src="js/app-home.js"></script>
   </body>
 </html>
