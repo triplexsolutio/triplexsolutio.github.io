@@ -53,27 +53,38 @@ export const planetTree = {
           tags: ["Recomendaciones"],
         },
         {
+          id: "buscador-anime",
+          title: "Buscador de Animes",
+          subtitle:
+            "Encuentra dónde ver todas las recomendaciones anime publicadas en redes y patreon",
+          logoText: "?",
+          type: "Módulo",
+          logoImage: "img/logo_buscador.webp",
+          actions: [
+            {
+              label: "Ir al Buscador",
+              href: "/buscador-anime",
+              external: false,
+            },
+          ],
+          accent: "orange",
+          // description:
+          //   "Historias, easter eggs y conexiones entre anime, manga y autores.",
+          tags: ["Buscador"],
+        },
+        {
           id: "anime-alerts",
           title: "Noticias",
+
           subtitle:
             "Nunca te pierdas ninguna novedad relevante del mundo anime",
           logoText: "NEW",
           type: "Módulo",
           accent: "blue",
+
           // description:
           //   "Alertas automáticas cuando sale un nuevo episodio de tus series favoritas.",
         },
-        // {
-        //   id: "anime-curiosities",
-        //   title: "Curiosidades",
-        //   subtitle: "Detalles que casi nadie te cuenta",
-        //   logoText: "?",
-        //   type: "Módulo",
-        //   accent: "orange",
-        //   description:
-        //     "Historias, easter eggs y conexiones entre anime, manga y autores.",
-        //   tags: ["Curiosidades"],
-        // },
       ],
     },
     {

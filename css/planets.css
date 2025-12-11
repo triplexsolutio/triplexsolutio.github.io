@@ -504,7 +504,7 @@
 /* Logo de planeta como imagen opcional */
 
 .planet__logo-img {
-  width: 115%;
+  width: 107%;
   aspect-ratio: 1 / 1;
   object-fit: contain;
   display: block;
