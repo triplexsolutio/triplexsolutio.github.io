@@ -12,7 +12,7 @@
   --border-subtle: rgba(148, 163, 184, 0.3);
 
   --planet-size-main: 6rem;
-  --planet-size-orbit: 3.3rem;
+  --planet-size-orbit: 3.7rem;
   --planet-size-satellite: 1.5rem;
 }
 
@@ -325,7 +325,7 @@
   margin-left: calc(var(--orbit-radius) * -1);
   border-radius: 999px;
   border: 1px dashed rgba(148, 163, 184, 0.45);
-  animation: orbit var(--orbit-duration) linear infinite;
+  /* animation: orbit var(--orbit-duration) linear infinite; */
   pointer-events: none;
 }
 
@@ -377,7 +377,29 @@
 .planet__logo--satellite {
   font-size: 0.6rem;
 }
+.planet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.planet__title,
+.planet__subtitle {
+  text-align: center;
+}
+
+.planet__title--below-logo {
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+  line-height: 1.2;
+}
+
+.planet__title--satellite-below-logo {
+  margin-top: 0.25rem;
+  font-size: 0.7rem;
+  line-height: 1.1;
+
+}
 /* ---------- ANIMACIONES ---------- */
 
 @keyframes orbit {

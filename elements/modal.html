@@ -1,0 +1,112 @@
+<!-- elements/modal.html -->
+<div class="backdrop" part="backdrop"></div>
+<div class="dialog" part="dialog" role="dialog" aria-modal="true">
+  <button class="close" part="close" type="button" aria-label="Cerrar modal">
+    <span aria-hidden="true">×</span>
+  </button>
+  <div class="body" part="body">
+    <slot></slot>
+  </div>
+</div>
+
+<style>
+  :host {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  :host([open]) {
+    display: flex;
+  }
+
+  .backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    transition: opacity 160ms ease-out;
+  }
+
+  .dialog {
+    position: relative;
+    background: var(--bg-soft);
+    border-radius: 20px;
+    max-width: var(--modal-max-width, 900px);
+    width: min(96%, var(--modal-max-width, 900px));
+    max-height: 90vh;
+    overflow: auto;
+    border: 1px solid var(--accent2-soft, rgba(255, 255, 255, 0.08));
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+    transition: opacity 180ms ease-out, transform 180ms ease-out;
+  }
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: var(--modal-padding, 1.25rem);
+    color: var(--text, #e5e7eb);
+  }
+
+  .close {
+    position: absolute;
+    top: 0.65rem;
+    right: 0.65rem;
+    border: none;
+    background: rgba(15, 23, 42, 0.9);
+    border-radius: 999px;
+    padding: 0.25rem 0.55rem;
+    color: #e5e7eb;
+    cursor: pointer;
+    font-size: 1.15rem;
+    line-height: 1;
+    transition: transform 120ms ease-out, opacity 120ms ease-out;
+  }
+
+  html[data-theme="light"] :host .close,
+  :host([data-theme="light"]) .close {
+    background: #e5e7eb;
+    color: #020617;
+  }
+
+  .close:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
+
+  :host([open]) .backdrop {
+    opacity: 1;
+  }
+
+  :host([open]) .dialog {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (max-width: 640px) {
+    .dialog {
+      border-radius: 16px;
+      width: 94%;
+    }
+
+    .body {
+      padding: var(--modal-padding, 1rem);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .backdrop,
+    .dialog,
+    .close {
+      transition: none;
+    }
+  }
+</style>

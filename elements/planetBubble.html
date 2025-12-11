@@ -1,0 +1,110 @@
+<!-- elements/planetBubble.html -->
+<div class="bubble" part="bubble" role="button" tabindex="0">
+  <div class="bubble__orb">
+    <div class="bubble__glow"></div>
+    <img class="bubble__img" part="image" alt="" />
+    <div class="bubble__fallback" part="fallback"></div>
+  </div>
+  <div class="bubble__title" part="title"></div>
+</div>
+
+<style>
+  :host {
+    --bubble-size: 88px;
+    --bubble-accent: var(--accent2, #4f46e5);
+    --bubble-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.45rem;
+    cursor: pointer;
+    user-select: none;
+    text-decoration: none;
+  }
+
+  .bubble {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    outline: none;
+  }
+
+  .bubble:focus-visible {
+    outline: 2px solid var(--bubble-accent);
+    outline-offset: 4px;
+    border-radius: 16px;
+  }
+
+  .bubble__orb {
+    position: relative;
+    width: var(--bubble-size);
+    height: var(--bubble-size);
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.32), rgba(255, 255, 255, 0.08)),
+      linear-gradient(145deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.02));
+    box-shadow:
+      inset 0 10px 25px rgba(255, 255, 255, 0.15),
+      inset 0 -10px 20px rgba(0, 0, 0, 0.25),
+      var(--bubble-shadow);
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    transform: rotate3d(1, 1, 0, 6deg);
+    transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+  }
+
+  .bubble__glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 30%, var(--bubble-accent), transparent 65%);
+    opacity: 0.55;
+    filter: blur(14px);
+    transform: scale(1.15);
+    pointer-events: none;
+  }
+
+  .bubble__img,
+  .bubble__fallback {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.1);
+    border: none;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    color: #0b1224;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .bubble__fallback {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.35));
+  }
+
+  .bubble__title {
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-align: center;
+    color: var(--text, #e5e7eb);
+  }
+
+  :host(:hover) .bubble__orb {
+    transform: rotate3d(1, 1, 0, 3deg) scale(1.03);
+    box-shadow:
+      inset 0 10px 25px rgba(255, 255, 255, 0.15),
+      inset 0 -10px 20px rgba(0, 0, 0, 0.25),
+      0 14px 36px rgba(0, 0, 0, 0.4);
+    filter: saturate(1.1);
+  }
+
+  @media (max-width: 520px) {
+    :host {
+      --bubble-size: 78px;
+    }
+  }
+</style>

@@ -8,7 +8,7 @@ export const planetTree = {
   accent: "orange",
   description:
     "Explora todo mi contenido: Buscador de animes, gameplays, componentes javascript, IA...",
-  tags: ["@triplexsolutio"],
+  // tags: ["@triplexsolutio"],
   actions: [
     {
       label: "Instagram",
@@ -24,14 +24,14 @@ export const planetTree = {
   children: [
     {
       id: "anime",
-      title: "AnimexSolutio",
+      title: "Anime",
       subtitle: "Recomendaciones, clips, noticias y más",
       logoText: "AN",
       logoImage: "img/logo_anime.webp",
       type: "Categoría",
       accent: "blue",
       description: "De un fan del anime para fans del anime :3",
-      tags: ["Anime", "Series"],
+      // tags: ["Anime", "Series"],
       actions: [
         {
           label: "Instagram",
@@ -50,11 +50,11 @@ export const planetTree = {
           accent: "orange",
           // description:
           //   "Listas TOP: shonen, romance, isekai, clásicos y joyas ocultas.",
-          tags: ["Recomendaciones"],
+          // tags: ["Recomendaciones"],
         },
         {
           id: "buscador-anime",
-          title: "Buscador de Animes",
+          title: "Buscador Anime",
           subtitle:
             "Encuentra dónde ver todas las recomendaciones anime publicadas en redes y patreon",
           logoText: "?",
@@ -70,7 +70,7 @@ export const planetTree = {
           accent: "orange",
           // description:
           //   "Historias, easter eggs y conexiones entre anime, manga y autores.",
-          tags: ["Buscador"],
+          // tags: ["Buscador"],
         },
         {
           id: "anime-alerts",
@@ -89,7 +89,7 @@ export const planetTree = {
     },
     {
       id: "gaming",
-      title: "GamingxSolutio",
+      title: "Gaming",
       subtitle: "PRÓXIMAMENTE | Directos, Gameplays, Setups..",
       logoText: "GM",
       logoImage: "img/logo_gaming.webp",
@@ -97,7 +97,7 @@ export const planetTree = {
       accent: "blue",
       description:
         "Streaming de videojuegos con estética anime, jugadas épicas, setups TOP y más.",
-      tags: ["Gaming"],
+      // tags: ["Gaming"],
       children: [
         {
           id: "gaming-clips",
@@ -106,7 +106,7 @@ export const planetTree = {
           type: "Módulo",
           accent: "orange",
           description: "Jugadones, momentos WTF y más clips.",
-          tags: ["Highlights"],
+          // tags: ["Highlights"],
         },
         {
           id: "gaming-setup",
@@ -116,13 +116,13 @@ export const planetTree = {
           accent: "blue",
           description:
             "Setup, periféricos y configuraciones que uso para crear y jugar.",
-          tags: ["Hardware"],
+          // tags: ["Hardware"],
         },
       ],
     },
     {
       id: "code",
-      title: "CodexSolutio",
+      title: "Code",
       subtitle: "PRÓXIMAMENTE | Aprende a programar como dios manda",
       logoText: "CODE",
       logoImage: "img/logo_code.webp",
@@ -130,7 +130,7 @@ export const planetTree = {
       accent: "orange",
       description:
         "Soy programador frontend senior y te enseño a crear una web como ésta usando componentes hechos desde cero con javascript ",
-      tags: ["@codexsolutio"],
+      // tags: ["@codexsolutio"],
       children: [
         {
           id: "co-components",
@@ -139,7 +139,7 @@ export const planetTree = {
           type: "Módulo",
           accent: "orange",
           description: "Componentes web hechos con javascript",
-          tags: ["Arte"],
+          // tags: ["Arte"],
         },
         {
           id: "co-praxis",
@@ -149,7 +149,7 @@ export const planetTree = {
           accent: "blue",
           description:
             "No hagas chapuzas, te enseño a programar como un artista",
-          tags: ["Automatización"],
+          // tags: ["Automatización"],
         },
       ],
     },

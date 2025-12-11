@@ -17,6 +17,14 @@ const headerSearchBtn = document.getElementById("headerSearchBtn");
 const goSearchBtn = document.getElementById("goSearchBtn");
 const coffeeBtn = document.getElementById("coffeeBtn");
 const logoZone = document.getElementById("logo-id");
+const demoModal = document.getElementById("demoModal");
+const openDemoModalBtn = document.getElementById("openDemoModal");
+const closeDemoModalBtn = document.getElementById("closeDemoModal");
+const explorePanelBtn = document.getElementById("explorePanelBtn");
+const socialLinksModal = document.getElementById("socialLinksModal");
+const collabPanelBtn = document.getElementById("collabPanelBtn");
+const collabModal = document.getElementById("collabModal");
+const collabModalEmailBtn = document.getElementById("collabModalEmailBtn");
 
 // ====== INIT ======
 
@@ -235,6 +243,46 @@ goSearchBtn?.addEventListener("click", () => {
 coffeeBtn?.addEventListener("click", () => {
   if (window.gtag) {
     gtag("event", "click_support_coffee", {});
+  }
+});
+
+// ====== MODAL DEMO ESTATICO ======
+openDemoModalBtn?.addEventListener("click", () => {
+  demoModal?.setAttribute("open", "");
+  if (window.gtag) {
+    gtag("event", "modal_demo_open", {});
+  }
+});
+
+closeDemoModalBtn?.addEventListener("click", () => {
+  demoModal?.removeAttribute("open");
+  if (window.gtag) {
+    gtag("event", "modal_demo_close", {});
+  }
+});
+
+// ====== MODAL REDES ======
+explorePanelBtn?.addEventListener("click", () => {
+  socialLinksModal?.setAttribute("open", "");
+  if (window.gtag) {
+    gtag("event", "modal_social_links_open", {});
+  }
+});
+
+collabPanelBtn?.addEventListener("click", () => {
+  collabModal?.setAttribute("open", "");
+  if (window.gtag) {
+    gtag("event", "modal_collab_open", {});
+  }
+});
+
+collabModalEmailBtn?.addEventListener("click", () => {
+  const mailUrl =
+    "https://mail.google.com/mail/?view=cm&fs=1&to=triplexsolutio@gmail.com&su=Propuesta%20de%20colaboracion&body=Hola%20Triplex%20:),%20[aqui%20tu%20propuesta]";
+  window.open(mailUrl, "_blank", "noopener");
+  collabModal?.removeAttribute("open");
+  if (window.gtag) {
+    gtag("event", "modal_collab_email", {});
   }
 });
 

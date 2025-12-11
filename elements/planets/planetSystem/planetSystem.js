@@ -213,7 +213,7 @@ export class PlanetSystem {
       button.style.setProperty("--planet-level", String(level));
     }
 
-    // Cuerpo
+    // Cuerpo (círculo)
     const body = document.createElement("div");
     body.className = "planet__body";
 
@@ -221,8 +221,10 @@ export class PlanetSystem {
     glow.className = "planet__glow";
     body.appendChild(glow);
 
-    // Logo: texto o imagen si se proporciona logoImage
-    if (node.logoImage) {
+    const hasLogoImage = !!node.logoImage;
+
+    // Logo dentro del círculo
+    if (hasLogoImage) {
       const img = document.createElement("img");
       img.className = "planet__logo-img";
       img.src = node.logoImage;
@@ -235,23 +237,25 @@ export class PlanetSystem {
       body.appendChild(logo);
     }
 
-    const hasLogoImage = !!node.logoImage;
+    // solo el círculo dentro del body
+    button.appendChild(body);
 
-    if (!hasLogoImage) {
+    // Título y subtítulo FUERA del círculo, debajo
+    if (node.title) {
       const title = document.createElement("div");
-      title.className = "planet__title";
+      title.className = hasLogoImage
+        ? "planet__title planet__title--below-logo"
+        : "planet__title";
       title.textContent = node.title;
-      body.appendChild(title);
-
-      if (node.subtitle && variant === "center") {
-        const subtitle = document.createElement("div");
-        subtitle.className = "planet__subtitle";
-        subtitle.textContent = node.subtitle;
-        body.appendChild(subtitle);
-      }
+      button.appendChild(title);
     }
 
-    button.appendChild(body);
+    if (node.subtitle && variant === "center") {
+      const subtitle = document.createElement("div");
+      subtitle.className = "planet__subtitle";
+      subtitle.textContent = node.subtitle;
+      button.appendChild(subtitle);
+    }
 
     // Satélites (si tiene hijos y NO es el centro)
     const hasSatellites =
@@ -296,6 +300,16 @@ export class PlanetSystem {
         }
 
         satellite.appendChild(satBody);
+
+        // título del satélite también fuera del círculo
+        if (child.title) {
+          const satTitle = document.createElement("div");
+          satTitle.className =
+            "planet__title planet__title--satellite-below-logo";
+          satTitle.textContent = child.title;
+          satellite.appendChild(satTitle);
+        }
+
         satellitesOrbit.appendChild(satellite);
       });
 

@@ -52,6 +52,8 @@
   </head>
   <body>
     <!-- banner web component -->
+    <script type="module" src="elements/modal.js"></script>
+    <script type="module" src="elements/planetBubble.js"></script>
     <script type="module" src="elements/patreonBanner.js"></script>
     <script type="module" src="elements/newsletterBar.js"></script>
     <script type="module" src="js/app-home.js" defer></script>
@@ -121,8 +123,142 @@
 
     <main id="top">
       <!-- PERFIL / HERO LINK IN BIO -->
-      <section class="profile-hero"></section>
+      <!-- <section class="profile-hero"></section> -->
+      <!-- HERO BURBUJAS CON GOKU -->
+      <section class="bubble-hero">
+        <img
+          class="bubble-hero__img"
+          src="img/gokuLarge.png"
+          alt="Goku con esfera de energia"
+        />
+        <div class="bubble-hero__overlay"></div>
 
+        <planet-bubble
+          class="bubble-hero__main"
+          node-id="buscador-anime"
+          style="--bubble-size: 128px"
+        ></planet-bubble>
+
+        <div class="bubble-hero__stack">
+          <planet-bubble node-id="anime"></planet-bubble>
+          <planet-bubble node-id="code"></planet-bubble
+          ><planet-bubble node-id="gaming"></planet-bubble>
+        </div>
+
+        <div class="bubble-hero__panel bubble-hero__panel--left">
+          <p class="bubble-hero__panel-kicker">Social stats</p>
+          <ul class="bubble-hero__stat-list">
+            <li><span>Seguidores</span><strong>+82k</strong></li>
+            <li><span>Views</span><strong>+7.2M</strong></li>
+            <li><span>Suscriptores</span><strong>+220</strong></li>
+          </ul>
+          <button
+            class="btn btn-outline bubble-hero__panel-btn"
+            id="collabPanelBtn"
+          >
+            Colaboración
+          </button>
+        </div>
+
+        <div class="bubble-hero__panel bubble-hero__panel--right">
+          <p class="bubble-hero__panel-kicker">Novedades</p>
+          <ul class="bubble-hero__content-list">
+            <li>7 Nuevos animes</li>
+            <li>2 Clips subidos</li>
+            <li>+1 lista en Patreon</li>
+          </ul>
+          <button
+            class="btn btn-outline bubble-hero__panel-btn"
+            id="explorePanelBtn"
+          >
+            Explorar
+          </button>
+        </div>
+      </section>
+
+      <ts-modal
+        id="socialLinksModal"
+        class="modal-demo__modal"
+        style="--modal-max-width: 520px; --modal-padding: 1.2rem"
+        data-backdrop="static"
+      >
+        <div class="social-modal">
+          <h3>Redes oficiales</h3>
+          <p class="social-modal__text">
+            Encuentra todo mi contenido en estas redes:
+          </p>
+          <ul class="social-modal__list">
+            <li>
+              <a
+                href="https://instagram.com/triplexsolutio"
+                target="_blank"
+                rel="noopener"
+                ><i class="fa-brands fa-instagram"></i> Instagram</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://tiktok.com/@triplexsolutio"
+                target="_blank"
+                rel="noopener"
+                ><i class="fa-brands fa-tiktok"></i> TikTok</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://patreon.com/triplexsolutio"
+                target="_blank"
+                rel="noopener"
+                ><i class="fa-brands fa-patreon"></i> Patreon</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://discord.gg/GqC7QmZdc5"
+                target="_blank"
+                rel="noopener"
+                ><i class="fa-brands fa-discord"></i> Discord</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://youtube.com/@triplexsolutio"
+                target="_blank"
+                rel="noopener"
+                ><i class="fa-brands fa-youtube"></i> YouTube</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.threads.net/@triplexsolutio"
+                target="_blank"
+                rel="noopener"
+                ><i class="fa-brands fa-threads"></i> Threads</a
+              >
+            </li>
+          </ul>
+        </div>
+      </ts-modal>
+
+      <ts-modal
+        id="collabModal"
+        class="modal-demo__modal"
+        style="--modal-max-width: 520px; --modal-padding: 1.2rem"
+        data-backdrop="static"
+      >
+        <div class="social-modal">
+          <h3>Colabora conmigo</h3>
+          <p class="social-modal__text">
+            Envíame un email con tu propuesta, timings, presupuesto y objetivos.
+          </p>
+          <button
+            class="btn btn-outline bubble-hero__panel-btn"
+            id="collabModalEmailBtn"
+          >
+            Enviar propuesta por email
+          </button>
+        </div>
+      </ts-modal>
       <!-- CONTADOR SEGUIDORES -->
       <section class="social-stats" aria-label="Seguidores en redes sociales">
         <div
@@ -183,13 +319,64 @@
         </div> -->
       </section>
 
+      <!-- MODAL DE EJEMPLO -->
+      <!-- <section class="modal-demo">
+        <div class="modal-demo__card">
+          <p class="modal-demo__eyebrow">Nuevo componente</p>
+          <h2 class="modal-demo__title">Modal de ejemplo</h2>
+          <p class="modal-demo__text">
+            Usa la etiqueta <code>&lt;modal&gt;</code> con el atributo
+            <code>open</code> para controlar su estado y cualquier contenido
+            interior como slot.
+          </p>
+          <div class="modal-demo__actions">
+            <button class="btn btn-primary" id="openDemoModal">
+              Abrir modal de ejemplo
+            </button>
+            <a class="btn btn-outline" href="#workwithme">Ir a colaboraciones</a>
+          </div>
+        </div>
+      </section> -->
+
+      <ts-modal id="demoModal" data-backdrop="static" class="modal-demo__modal">
+        <div class="modal-demo__body">
+          <span class="pill">Demo</span>
+          <h3 class="modal-demo__body-title">Modal estatico listo para usar</h3>
+          <p class="modal-demo__body-text">
+            Este modal es estatico: abre y cierra con un atributo
+            <code>open</code>
+            y todo lo de dentro es sloteado.
+          </p>
+          <ul class="modal-demo__list">
+            <li>Accion personalizada en el CTA.</li>
+            <li>Cierra con Escape o con el boton.</li>
+            <li>El backdrop es estatico (no se cierra al hacer clic fuera).</li>
+          </ul>
+          <div class="modal-demo__actions modal-demo__actions--inline">
+            <button class="btn btn-primary" id="closeDemoModal">
+              Cerrar modal
+            </button>
+            <a class="btn btn-outline" href="#newsletter">Ir a newsletter</a>
+          </div>
+        </div>
+      </ts-modal>
+
       <!-- BARRA NEWSLETTER -->
       <section id="newsletter" class="newsletter-bar-section">
         <newsletter-bar></newsletter-bar>
       </section>
 
+      <!-- BURBUJAS / LOGOS 3D -->
+      <!-- <section class="bubble-row">
+        <planet-bubble node-id="root"></planet-bubble>
+        <planet-bubble node-id="anime"></planet-bubble>
+        <planet-bubble node-id="buscador-anime"></planet-bubble>
+        <planet-bubble node-id="gaming"></planet-bubble>
+        <planet-bubble node-id="code"></planet-bubble>
+      </section> -->
+
       <!-- Contenedor del sistema de planetas -->
-      <section><div id="planet-system-root"></div></section>
+      <!-- <section><div id="planet-system-root"></div></section> -->
 
       <!-- LINKS PRINCIPALES / ACCIONES -->
       <section id="links" class="link-blocks">
@@ -267,7 +454,7 @@
       </section>
 
       <!-- AGENDA COLABORACIÓN (accordion) -->
-      <section class="link-blocks">
+      <!-- <section class="link-blocks">
         <article class="accordion">
           <button class="accordion__header" data-accordion-toggle>
             <span>Agendar colaboración</span>
@@ -288,7 +475,7 @@
             </a>
           </div>
         </article>
-      </section>
+      </section> -->
 
       <!-- ZONA DE ANUNCIOS -->
       <section class="ads-section">
