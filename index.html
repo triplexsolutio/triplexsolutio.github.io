@@ -136,7 +136,7 @@
         <planet-bubble
           class="bubble-hero__main"
           node-id="buscador-anime"
-          style="--bubble-size: 128px"
+          style="--bubble-size: 134px"
         ></planet-bubble>
 
         <div class="bubble-hero__stack">
@@ -148,9 +148,9 @@
         <div class="bubble-hero__panel bubble-hero__panel--left">
           <p class="bubble-hero__panel-kicker">Social stats</p>
           <ul class="bubble-hero__stat-list">
-            <li><span>Seguidores</span><strong>+82k</strong></li>
-            <li><span>Views</span><strong>+7.2M</strong></li>
-            <li><span>Suscriptores</span><strong>+220</strong></li>
+            <li><span>Seguidores</span><strong>+72k</strong></li>
+            <li><span>Views</span><strong>+6.8M</strong></li>
+            <li><span>Suscriptores</span><strong>+221</strong></li>
           </ul>
           <button
             class="btn btn-outline bubble-hero__panel-btn"
@@ -179,72 +179,92 @@
       <ts-modal
         id="socialLinksModal"
         class="modal-demo__modal"
-        style="--modal-max-width: 520px; --modal-padding: 1.2rem"
-        data-backdrop="static"
+        style="--modal-max-width: 520px; --modal-padding: 0.8rem 0.95rem"
       >
         <div class="social-modal">
-          <h3>Redes oficiales</h3>
-          <p class="social-modal__text">
-            Encuentra todo mi contenido en estas redes:
-          </p>
-          <ul class="social-modal__list">
-            <li>
+          <div class="social-modal__grid">
+            <div class="social-modal__cta">
+              <p class="social-modal__cta-kicker">Apoyo en Patreon</p>
+              <h4 class="social-modal__cta-title">
+                Acceso anticipado + listas premium
+              </h4>
+              <p class="social-modal__cta-text">
+                Ayuda a que el proyecto siga creciendo con solo $2/mes y
+                desbloquea listas completas, avisos y contenido antes que nadie.
+              </p>
               <a
-                href="https://instagram.com/triplexsolutio"
+                class="btn btn-primary social-modal__cta-btn"
+                href="https://www.patreon.com/triplexsolutio/membership"
                 target="_blank"
                 rel="noopener"
-                ><i class="fa-brands fa-instagram"></i> Instagram</a
               >
-            </li>
-            <li>
-              <a
-                href="https://tiktok.com/@triplexsolutio"
-                target="_blank"
-                rel="noopener"
-                ><i class="fa-brands fa-tiktok"></i> TikTok</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://patreon.com/triplexsolutio"
-                target="_blank"
-                rel="noopener"
-                ><i class="fa-brands fa-patreon"></i> Patreon</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://discord.gg/GqC7QmZdc5"
-                target="_blank"
-                rel="noopener"
-                ><i class="fa-brands fa-discord"></i> Discord</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://youtube.com/@triplexsolutio"
-                target="_blank"
-                rel="noopener"
-                ><i class="fa-brands fa-youtube"></i> YouTube</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://www.threads.net/@triplexsolutio"
-                target="_blank"
-                rel="noopener"
-                ><i class="fa-brands fa-threads"></i> Threads</a
-              >
-            </li>
-          </ul>
+                Apoyar / Suscribirse
+              </a>
+            </div>
+            <div>
+              <h3>Redes oficiales</h3>
+              <p class="social-modal__text">
+                Encuentra todo mi contenido en estas redes:
+              </p>
+              <ul class="social-modal__list">
+                <li>
+                  <a
+                    href="https://instagram.com/triplexsolutio"
+                    target="_blank"
+                    rel="noopener"
+                    ><i class="fa-brands fa-instagram"></i> Instagram</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://tiktok.com/@triplexsolutio"
+                    target="_blank"
+                    rel="noopener"
+                    ><i class="fa-brands fa-tiktok"></i> TikTok</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://patreon.com/triplexsolutio"
+                    target="_blank"
+                    rel="noopener"
+                    ><i class="fa-brands fa-patreon"></i> Patreon</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://discord.gg/GqC7QmZdc5"
+                    target="_blank"
+                    rel="noopener"
+                    ><i class="fa-brands fa-discord"></i> Discord</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://youtube.com/@triplexsolutio"
+                    target="_blank"
+                    rel="noopener"
+                    ><i class="fa-brands fa-youtube"></i> YouTube</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.threads.net/@triplexsolutio"
+                    target="_blank"
+                    rel="noopener"
+                    ><i class="fa-brands fa-threads"></i> Threads</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </ts-modal>
 
       <ts-modal
         id="collabModal"
         class="modal-demo__modal"
-        style="--modal-max-width: 520px; --modal-padding: 1.2rem"
-        data-backdrop="static"
+        style="--modal-max-width: 520px; --modal-padding: 0.8rem 0.95rem"
       >
         <div class="social-modal">
           <h3>Colabora conmigo</h3>
@@ -269,7 +289,7 @@
             <i class="fa-brands fa-instagram"></i>
           </div>
           <div class="social-stat-card__label">Instagram</div>
-          <div class="social-stat-card__value" id="statInstagram">40k</div>
+          <div class="social-stat-card__value" id="statInstagram">40.5k</div>
         </div>
 
         <div
