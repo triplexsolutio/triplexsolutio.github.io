@@ -212,7 +212,8 @@ html[data-theme="dark"] .social-stat-card--threads .social-stat-card__icon {
       rgba(0, 0, 0, 0.4) 0%,
       rgba(0, 0, 0, 0.2) 38%,
       rgba(0, 0, 0, 0.24) 62%,
-      var(--bg, #0b1224) 100%);
+      rgba(0, 0, 0, 0.15) 95%,
+       #070b1e 100%);
   z-index: 1;
   pointer-events: none;
 }
@@ -221,10 +222,12 @@ html[data-theme="light"] .bubble-hero__overlay {
   background:
     radial-gradient(circle at 50% 65%, rgb(230, 230, 230), transparent 52%),
     linear-gradient(180deg,
-      rgba(255, 255, 255, 0.78) 0%,
-      rgba(255, 255, 255, 0.55) 36%,
-      rgba(255, 255, 255, 0.35) 64%,
-      var(--bg, #f3f4f6) 100%);
+      rgba(255, 255, 255, 0.92) 0%,
+      rgba(255, 255, 255, 0.4) 25%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0.4) 75%,
+      rgba(236, 238, 246, 0.92) 95%,
+      #eceef6 100%)
 }
 
 .bubble-hero planet-bubble {
@@ -432,7 +435,7 @@ html[data-theme="light"] .bubble-hero__panel {
   .bubble-hero__panel {
     width: 34vw;
     max-width: none;
-    top: 40%;
+    top: 43%;
     padding: 0.35rem 0.45rem;
     transform: translateY(-50%);
   }
