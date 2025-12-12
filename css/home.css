@@ -401,7 +401,8 @@ html[data-theme="light"] .bubble-hero__panel {
 .bubble-hero__main {
   left: 50%;
   bottom: 5%;
-  transform: translate(-50%, -46px);
+  transform: translate(-50%, -36px);
+  --bubble-animation: bubble-breathe 3.8s ease-in-out infinite;
 }
 
 .bubble-hero__stack {
@@ -442,8 +443,9 @@ html[data-theme="light"] .bubble-hero__panel {
 
   .bubble-hero__main {
     bottom: 3%;
-    transform: translate(-50%, -46px);
+    transform: translate(-50%, -36px);
     --bubble-size: 114px;
+    --bubble-animation: bubble-breathe 3.8s ease-in-out infinite;
   }
 }
 
