@@ -460,7 +460,7 @@ html[data-theme="light"] .bubble-hero__panel {
   .bubble-hero__panel {
     width: 34vw;
     max-width: none;
-    top: 43%;
+    top: 46%;
     padding: 0.35rem 0.45rem;
     transform: translateY(-50%);
   }
