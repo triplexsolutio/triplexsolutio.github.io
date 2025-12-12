@@ -197,9 +197,9 @@ html[data-theme="dark"] .social-stat-card--threads .social-stat-card__icon {
 .bubble-hero__img {
   display: block;
   width: 100%;
-  height: clamp(620px, 95vw, 1080px);
+  height: clamp(560px, 90vw, 1000px);
   object-fit: cover;
-  object-position: center 26%;
+  object-position: center 20%;
   filter: saturate(0.95);
 }
 
@@ -255,11 +255,11 @@ html[data-theme="light"] .bubble-hero__panel {
 }
 
 .bubble-hero__panel--left {
-  left: 3%;
+  left: 1%;
 }
 
 .bubble-hero__panel--right {
-  right: 3%;
+  right: 1%;
 }
 
 .bubble-hero__panel-kicker {
@@ -398,7 +398,7 @@ html[data-theme="light"] .bubble-hero__panel {
 .bubble-hero__main {
   left: 50%;
   bottom: 5%;
-  transform: translate(-50%, -106px);
+  transform: translate(-50%, -56px);
 }
 
 .bubble-hero__stack {
@@ -439,7 +439,7 @@ html[data-theme="light"] .bubble-hero__panel {
 
   .bubble-hero__main {
     bottom: 3%;
-    transform: translate(-50%, -96px);
+    transform: translate(-50%, -56px);
     --bubble-size: 114px;
   }
 }
