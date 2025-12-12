@@ -398,6 +398,18 @@ html[data-theme="light"] .bubble-hero__panel {
   position: relative;
 }
 
+.bubble-hero__stack planet-bubble {
+  --bubble-animation: bubble-float 5.2s ease-in-out infinite;
+}
+
+.bubble-hero__stack planet-bubble:nth-child(2) {
+  --bubble-animation: bubble-float 5.8s ease-in-out infinite;
+}
+
+.bubble-hero__stack planet-bubble:nth-child(3) {
+  --bubble-animation: bubble-float 6.4s ease-in-out infinite;
+}
+
 .bubble-hero__main {
   left: 50%;
   bottom: 5%;
@@ -431,6 +443,18 @@ html[data-theme="light"] .bubble-hero__panel {
     top: 4%;
     gap: 1.95rem;
     width: 100%;
+  }
+
+  .bubble-hero__stack planet-bubble {
+    --bubble-animation: bubble-float 5.2s ease-in-out infinite;
+  }
+
+  .bubble-hero__stack planet-bubble:nth-child(2) {
+    --bubble-animation: bubble-float 5.8s ease-in-out infinite;
+  }
+
+  .bubble-hero__stack planet-bubble:nth-child(3) {
+    --bubble-animation: bubble-float 6.4s ease-in-out infinite;
   }
 
   .bubble-hero__panel {

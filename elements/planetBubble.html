@@ -105,6 +105,18 @@
     }
   }
 
+  @keyframes bubble-float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-4px) scale(1.01);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
   @media (max-width: 520px) {
     :host {
       --bubble-size: 82px;
