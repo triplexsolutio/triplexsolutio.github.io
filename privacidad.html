@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pol&iacute;tica de privacidad | TriplexSolutio</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body style="padding: 20px; max-width: 900px; margin: auto; line-height: 1.6;">
+  <h1>Pol&iacute;tica de privacidad</h1>
+  <p>Responsable: TriplexSolutio. Contacto: <a href="mailto:triplexsolutio@gmail.com">triplexsolutio@gmail.com</a>.</p>
+  <h2>Datos que recopilamos</h2>
+  <ul>
+    <li>Datos t&eacute;cnicos (IP, navegador, dispositivo) para seguridad y funcionamiento.</li>
+    <li>Estad&iacute;sticas an&oacute;nimas mediante Google Analytics.</li>
+    <li>Identificadores de publicidad cuando aceptas cookies de anuncios (Google AdSense).</li>
+    <li>Datos que introduces en formularios (por ejemplo, email para newsletter).</li>
+  </ul>
+  <h2>Finalidad y base legal</h2>
+  <ul>
+    <li>Medici&oacute;n y anal&iacute;tica: inter&eacute;s leg&iacute;timo y tu consentimiento cuando aplique.</li>
+    <li>Publicidad y personalizaci&oacute;n: solo con tu consentimiento expl&iacute;cito.</li>
+    <li>Comunicaciones: responder a contactos y enviar la newsletter solicitada.</li>
+    <li>Seguridad y prevenci&oacute;n de fraude.</li>
+  </ul>
+  <h2>Terceros</h2>
+  <p>Usamos servicios de Google (Analytics y AdSense). Consulta sus pol&iacute;ticas: <a href="https://policies.google.com/privacy?hl=es" target="_blank" rel="noopener">Privacidad Google</a> y <a href="https://policies.google.com/technologies/ads?hl=es" target="_blank" rel="noopener">Tecnolog&iacute;as de anuncios</a>.</p>
+  <h2>Conservaci&oacute;n</h2>
+  <p>Solo guardamos los datos el tiempo necesario para la finalidad prevista o mientras mantengas tu consentimiento.</p>
+  <h2>Derechos</h2>
+  <p>Puedes acceder, rectificar y suprimir tus datos, as&iacute; como oponerte o limitar el tratamiento. Escr&iacute;benos a <a href="mailto:triplexsolutio@gmail.com">triplexsolutio@gmail.com</a>.</p>
+  <h2>Consentimiento y retirada</h2>
+  <p>Puedes cambiar tu decisi&oacute;n en cualquier momento desde el enlace "Preferencias de cookies" del pie o reabriendo el banner.</p>
+  <h2>Transferencias</h2>
+  <p>Los proveedores pueden procesar datos en la UE y EE. UU. bajo cl&aacute;usulas contractuales adecuadas.</p>
+  <h2>Actualizaciones</h2>
+  <p>Podemos actualizar esta pol&iacute;tica para cumplir normativa o cambios del servicio. &Uacute;ltima actualizaci&oacute;n: junio 2024.</p>
+
+  <div style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
+    <button id="acceptCookies" style="padding: 10px 14px; border-radius: 10px; border: 1px solid #4f46e5; background: linear-gradient(135deg, #7c3aed, #2563eb); color: #fff; font-weight: 700; cursor: pointer;">Aceptar cookies y volver</button>
+    <button id="backHome" style="padding: 10px 14px; border-radius: 10px; border: 1px solid #94a3b8; background: transparent; color: #111827; font-weight: 700; cursor: pointer;">Volver al inicio</button>
+  </div>
+
+  <script>
+    (function () {
+      const acceptBtn = document.getElementById("acceptCookies");
+      const backBtn = document.getElementById("backHome");
+      function goHome() {
+        window.location.href = "/";
+      }
+      acceptBtn?.addEventListener("click", function () {
+        try {
+          localStorage.setItem("consentStatus", "granted");
+        } catch (e) {}
+        goHome();
+      });
+      backBtn?.addEventListener("click", goHome);
+    })();
+  </script>
+</body>
+</html>

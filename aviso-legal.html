@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aviso legal | TriplexSolutio</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body style="padding: 20px; max-width: 900px; margin: auto; line-height: 1.6;">
+  <h1>Aviso legal y condiciones de uso</h1>
+  <p>Titular: TriplexSolutio. Contacto: <a href="mailto:triplexsolutio@gmail.com">triplexsolutio@gmail.com</a>. Sitio web personal dedicado a anime, c&oacute;digo y gaming.</p>
+  <h2>Propiedad intelectual</h2>
+  <p>Los contenidos propios est&aacute;n licenciados al titular. Las marcas y contenidos de terceros pertenecen a sus propietarios y se usan con fines informativos. No se permite su reproducci&oacute;n no autorizada.</p>
+  <h2>Uso permitido</h2>
+  <p>El usuario se compromete a hacer un uso l&iacute;cito, sin difundir contenido il&iacute;cito, da&ntilde;ino, difamatorio o que infrinja derechos de autor.</p>
+  <h2>Enlaces</h2>
+  <p>Los enlaces a terceros se ofrecen para conveniencia. No controlamos ni respondemos por su contenido. Evitamos enlazar a material que infrinja derechos.</p>
+  <h2>Responsabilidad</h2>
+  <p>El titular no garantiza disponibilidad continua ni ausencia de errores, aunque se intentar&aacute; mantener el servicio. El uso del sitio es bajo tu propio riesgo.</p>
+  <h2>Publicidad y colaboraciones</h2>
+  <p>Las colaboraciones o contenidos patrocinados se indicar&aacute;n como tales. La publicidad se gestiona a trav&eacute;s de Google AdSense y respeta las pol&iacute;ticas aplicables.</p>
+  <h2>Protecci&oacute;n de datos</h2>
+  <p>Consulta la <a href="/privacidad.html">pol&iacute;tica de privacidad</a> y la <a href="/politica-cookies.html">pol&iacute;tica de cookies</a> para conocer el tratamiento de datos.</p>
+  <h2>Jurisdicci&oacute;n</h2>
+  <p>Aplicable la normativa espa&ntilde;ola y de la UE en materia de consumidores y protecci&oacute;n de datos.</p>
+  <h2>Actualizaciones</h2>
+  <p>&Uacute;ltima revisi&oacute;n: junio 2024.</p>
+
+  <div style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
+    <button id="acceptCookies" style="padding: 10px 14px; border-radius: 10px; border: 1px solid #4f46e5; background: linear-gradient(135deg, #7c3aed, #2563eb); color: #fff; font-weight: 700; cursor: pointer;">Aceptar cookies y volver</button>
+    <button id="backHome" style="padding: 10px 14px; border-radius: 10px; border: 1px solid #94a3b8; background: transparent; color: #111827; font-weight: 700; cursor: pointer;">Volver al inicio</button>
+  </div>
+
+  <script>
+    (function () {
+      const acceptBtn = document.getElementById("acceptCookies");
+      const backBtn = document.getElementById("backHome");
+      function goHome() {
+        window.location.href = "/";
+      }
+      acceptBtn?.addEventListener("click", function () {
+        try {
+          localStorage.setItem("consentStatus", "granted");
+        } catch (e) {}
+        goHome();
+      });
+      backBtn?.addEventListener("click", goHome);
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pol&iacute;tica de cookies | TriplexSolutio</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body style="padding: 20px; max-width: 900px; margin: auto; line-height: 1.6;">
+  <h1>Pol&iacute;tica de cookies</h1>
+  <p>Usamos cookies propias y de terceros para funcionamiento, anal&iacute;tica y publicidad.</p>
+  <h2>&iquest;Qu&eacute; es una cookie?</h2>
+  <p>Archivo que se guarda en tu dispositivo y permite recordar informaci&oacute;n b&aacute;sica.</p>
+  <h2>Tipos que usamos</h2>
+  <ul>
+    <li>Necesarias: autenticaci&oacute;n b&aacute;sica, seguridad, preferencias esenciales.</li>
+    <li>Anal&iacute;tica: medici&oacute;n de uso con Google Analytics (cookies como _ga, _gid).</li>
+    <li>Publicidad: Google AdSense para mostrar anuncios (cookies como IDE, ANID, NID) solo si aceptas.</li>
+  </ul>
+  <h2>Gesti&oacute;n</h2>
+  <p>Puedes aceptar o rechazar desde el banner o el enlace "Preferencias de cookies" en el pie. Tambi&eacute;n puedes borrar o bloquear cookies desde tu navegador.</p>
+  <h2>Terceros</h2>
+  <p>Google usa cookies para personalizar anuncios y medir rendimiento. M&aacute;s info en sus <a href="https://policies.google.com/technologies/ads?hl=es" target="_blank" rel="noopener">pol&iacute;ticas de anuncios</a>.</p>
+  <h2>Revocar</h2>
+  <p>Si rechazas, solo se mantendr&aacute;n las cookies necesarias. Puedes cambiar tu opci&oacute;n en cualquier momento.</p>
+  <h2>Actualizaciones</h2>
+  <p>&Uacute;ltima revisi&oacute;n: junio 2024.</p>
+
+  <div style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
+    <button id="acceptCookies" style="padding: 10px 14px; border-radius: 10px; border: 1px solid #4f46e5; background: linear-gradient(135deg, #7c3aed, #2563eb); color: #fff; font-weight: 700; cursor: pointer;">Aceptar cookies y volver</button>
+    <button id="backHome" style="padding: 10px 14px; border-radius: 10px; border: 1px solid #94a3b8; background: transparent; color: #111827; font-weight: 700; cursor: pointer;">Volver al inicio</button>
+  </div>
+
+  <script>
+    (function () {
+      const acceptBtn = document.getElementById("acceptCookies");
+      const backBtn = document.getElementById("backHome");
+      function goHome() {
+        window.location.href = "/";
+      }
+      acceptBtn?.addEventListener("click", function () {
+        try {
+          localStorage.setItem("consentStatus", "granted");
+        } catch (e) {}
+        goHome();
+      });
+      backBtn?.addEventListener("click", goHome);
+    })();
+  </script>
+</body>
+</html>

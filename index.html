@@ -2,14 +2,110 @@
 <html lang="es" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
-    <title>TriplexSolutio · [Anime, Code, Gaming]</title>
+    <title>TriplexSolutio [Anime, Code, Gaming]</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      .consent-modal {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 9999;
+        display: none;
+        background: #0f1117;
+        color: #f8fafc;
+        border-top: 1px solid #222837;
+        padding: 16px 18px;
+        box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.35);
+        transform: translateY(100%);
+        transition: transform 280ms ease, opacity 200ms ease;
+        opacity: 0;
+      }
+      .consent-modal--visible {
+        display: block;
+        transform: translateY(0);
+        opacity: 1;
+      }
+      .consent-modal__body {
+        max-width: 1080px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        align-items: center;
+      }
+      .consent-modal__title {
+        margin: 0 0 4px;
+        font-size: 18px;
+        font-weight: 700;
+      }
+      .consent-modal__text {
+        margin: 0;
+        line-height: 1.45;
+        font-size: 14px;
+        color: #dbeafe;
+      }
+      .consent-modal__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .consent-btn {
+        border: 1px solid #94a3b8;
+        background: transparent;
+        color: #f8fafc;
+        padding: 10px 14px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: 700;
+        font-size: 14px;
+        transition: all 140ms ease;
+      }
+      .consent-btn--primary {
+        background: linear-gradient(135deg, #7c3aed, #2563eb);
+        border-color: transparent;
+      }
+      .consent-btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 5px 18px rgba(0, 0, 0, 0.35);
+      }
+      .consent-modal__links a {
+        color: #c4d3f5;
+        text-decoration: underline;
+        font-weight: 600;
+      }
+      @media (min-width: 720px) {
+        .consent-modal__body {
+          grid-template-columns: 2fr 1fr;
+        }
+        .consent-modal__actions {
+          justify-content: flex-end;
+        }
+      }
+    </style>
+
+    <!-- Consent mode v2 default (antes de gtag/ads) -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("consent", "default", {
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+        analytics_storage: "denied",
+        functionality_storage: "granted",
+        security_storage: "granted",
+      });
+    </script>
 
     <!-- GOOGLE ANALYTICS -->
     <!-- Google tag (gtag.js) -->
     <script
       async
-      src="https://www.googletagmanager.com/gtag/js?id=G-PCMHEQ64E0"
+      src="https://www.googletagmanager.com/gtag/js&copy;id=G-PCMHEQ64E0"
     ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -24,7 +120,7 @@
     <!-- Anuncios -->
     <script
       async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7902819778621033"
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&copy;client=ca-pub-7902819778621033"
       crossorigin="anonymous"
     ></script>
 
@@ -51,6 +147,37 @@
     />
   </head>
   <body>
+    <div
+      id="consentModal"
+      class="consent-modal"
+      role="dialog"
+      aria-live="polite"
+      aria-label="Preferencias de privacidad"
+    >
+      <div class="consent-modal__body">
+        <div>
+          <p class="consent-modal__title">Privacidad y cookies</p>
+          <p class="consent-modal__text">
+            No te prepcupes, que este mensaje lo tengo que mostrar por
+            normativa..solo uso cookies y datos para medir analíticas y otros
+            (tipo si vienes desde insta, tiktok..), etc. Puedes aceptar o
+            rechazar en cualquier momento. Más info en
+            <a href="/privacidad.html">privacidad</a> y
+            <a href="/politica-cookies.html">cookies</a>.
+          </p>
+          <!-- <p class="consent-modal__links">
+            <a href="/aviso-legal.html">Aviso legal</a>
+          </p> -->
+        </div>
+        <div class="consent-modal__actions">
+          <button id="consentReject" class="consent-btn">Rechazar</button>
+          <button id="consentAccept" class="consent-btn consent-btn--primary">
+            Aceptar
+          </button>
+        </div>
+      </div>
+    </div>
+
     <!-- banner web component -->
     <script type="module" src="elements/modal.js"></script>
     <script type="module" src="elements/planetBubble.js"></script>
@@ -461,7 +588,7 @@
               sociales, etc.
             </p>
             <a
-              href="https://beacons.ai/triplexsolutio/mediakit?origin=lib"
+              href="https://beacons.ai/triplexsolutio/mediakit&copy;origin=lib"
               target="_blank"
               rel="noopener"
               class="workwithme-link"
@@ -485,7 +612,7 @@
               económica, objetivo, etc.
             </p>
             <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=triplexsolutio@gmail.com&su=Propuesta de colaboración&body=Hola Triplex :), [aquí tu propuesta]"
+              href="https://mail.google.com/mail/&copy;view=cm&fs=1&to=triplexsolutio@gmail.com&su=Propuesta de colaboración&body=Hola Triplex :), [aquí tu propuesta]"
               target="_blank"
               rel="noopener"
               class="btn btn-primary block-btn"
@@ -514,7 +641,7 @@
         <div class="modal-body modal-body--newsletter">
           <!-- BLOQUE DE TEXTO IZQUIERDA -->
           <div class="modal-newsletter-copy">
-            <p class="modal-kicker">¿Quieres contenido anime exclusivo?</p>
+            <p class="modal-kicker">¿Quieres contenido anime exclusivo&copy;</p>
             <h2 class="modal-title">Newsletter anime</h2>
             <p class="modal-text">
               Apúntate para no perderte nada y estar al día con el anime más
@@ -544,11 +671,18 @@
     <footer id="footer" class="site-footer">
       <div class="footer-inner">
         <p>
-          © <span id="year"></span> TriplexSolutio ·
+          &copy; <span id="year"></span> TriplexSolutio
           <span style="font-size: 12px"
             >De un fan del anime para fans del anime :)</span
           >
         </p>
+        <div class="footer-links">
+          <a href="/privacidad.html">Privacidad</a>
+          <a href="/politica-cookies.html">Cookies</a>
+          <a href="/aviso-legal.html">Aviso legal</a>
+          <a href="#" id="footerConsent">Preferencias de cookies</a>
+          <a href="mailto:triplexsolutio@gmail.com">Contacto</a>
+        </div>
         <div class="social-links">
           <a
             href="https://instagram.com/triplexsolutio"
@@ -597,5 +731,49 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      (function () {
+        const modal = document.getElementById("consentModal");
+        const acceptBtn = document.getElementById("consentAccept");
+        const rejectBtn = document.getElementById("consentReject");
+        const footerPref = document.getElementById("footerConsent");
+        const saved = localStorage.getItem("consentStatus");
+
+        function updateConsent(status) {
+          gtag("consent", "update", {
+            ad_storage: status,
+            ad_user_data: status,
+            ad_personalization: status,
+            analytics_storage: status,
+          });
+          localStorage.setItem("consentStatus", status);
+          modal.classList.remove("consent-modal--visible");
+        }
+
+        function showModal() {
+          modal.classList.add("consent-modal--visible");
+        }
+
+        if (saved === "granted" || saved === "denied") {
+          updateConsent(saved);
+        } else {
+          showModal();
+        }
+
+        acceptBtn?.addEventListener("click", function () {
+          updateConsent("granted");
+        });
+
+        rejectBtn?.addEventListener("click", function () {
+          updateConsent("denied");
+        });
+
+        footerPref?.addEventListener("click", function (ev) {
+          ev.preventDefault();
+          showModal();
+        });
+      })();
+    </script>
   </body>
 </html>
